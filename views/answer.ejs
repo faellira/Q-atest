@@ -1,0 +1,31 @@
+<%- include ('partials/header.ejs') %>
+<body>
+    <%- include ('partials/navbar.ejs') %>
+    <div class="container mt-4">
+        <div class="card">
+            <div class="card-header">
+                <h1><%= questions.title %></h1>
+                <p><%= questions.description %></p>
+            </div>
+            <div class="card-body">
+                <form method="POST" action="/saveAnswer" >
+                    <input type="hidden" name="questionId" id="questionId" value="<%= questions.id %>">
+                    <textarea name="answer" id="answer" class="form-control  mb-3" placeholder="Escreva sua resposta..."></textarea>
+                    <button class="btn btn-primary btn-lg" id="btn">Responder</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <% answers.forEach((answers) =>{%>
+        <div class="container mt-4">
+            <div class="card">
+                <div class="card-body">
+                    <h4><%= answers.bodyAnswer %></h4>
+                    <span class="d-flex justify-content-end" id="dateCreated"><%= answers.createdAt.toLocaleString('pt-br', {day: 'numeric', month: 'long', year: 'numeric',hour: "numeric",
+                        minute: "numeric",
+                        second: "numeric"}) %></span>
+                </div>
+            </div>
+        </div>
+    <% }) %>
+</body>

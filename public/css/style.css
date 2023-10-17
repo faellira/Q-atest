@@ -1,0 +1,29 @@
+body{
+    background-color: #dfe7ec;
+}
+
+#navbar{
+    background-color: rgb(26, 3, 49);
+}
+
+#btn{
+    background-color: rgb(26, 3, 49);
+    border-color: rgb(90, 34, 146);
+}
+
+#btn:hover{
+    transform: scale(1.05);
+}
+
+.form-control:focus{
+    border-color: rgb(26, 3, 49);
+    box-shadow: 0 0 0 0.2rem rgba(90, 34, 146, 0.25)
+}
+
+#dateCreated{
+    right: 0;
+    margin-right: 1rem;
+    font-style: italic;
+    font-weight: 200;
+    color: #495057;
+}

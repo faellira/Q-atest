@@ -1,0 +1,28 @@
+<%- include ('partials/header.ejs') %>
+<body>
+    <%- include ('partials/navbar.ejs') %>
+    <div class="container mt-4 d-flex justify-content-end">
+        <a href="/question" class="btn btn-primary btn-lg" id="btn">Perguntar</a>
+    </div>
+    
+    <% questions.forEach((questions)=>{%>
+        <div class="container mt-4 align-right">
+            <div class="card">
+                <div class="card-body">
+                    <h3><%= questions.title %></h3>
+                    <hr>
+                </div>
+                <div class="card-footer d-inline-flex align-items-center">
+                    <a href="/answer/<%= questions.id %>" class="btn btn-primary btn-m" id="btn">Responder</a>
+                    <span id="dateCreated" class="position-absolute"><%= questions.createdAt.toLocaleString('pt-br', {day: 'numeric', month: 'long', year: 'numeric',hour: "numeric",
+                        minute: "numeric",
+                        second: "numeric"}) %></span>
+                </div>
+            </div> 
+        </div>
+    <% }) %>
+    
+    
+    
+</body>
+<%- include ('partials/footer.ejs') %>
